@@ -1,3 +1,5 @@
+// const Calculator = require('../libraries/Calculator');
+//let myCalc = new Calculator()
 const addNumbers = (req, res) => {
     let number1 = parseInt(req.query.num1);
     let number2 = parseInt(req.query.num2);
@@ -6,44 +8,38 @@ const addNumbers = (req, res) => {
     res.status(200)
     res.json({ result: sum })
 
-router.get('/substract', (req, res) => {
+}
+
+const subtractNumbers = (req, res) => {
     let number1 = parseInt(req.query.num1);
     let number2 = parseInt(req.query.num2);
     let difference = number1 - number2
     console.log(difference)
     res.status(200)
     res.json({result:difference})
-    })
+}
     
-router.get('/multiply', (req, res) => {
+const multiplyNumbers = (req, res) => {
     let number1 = parseInt(req.query.num1);
     let number2 = parseInt(req.query.num2);
-    let sum = number1 * number2
+    let product = number1 * number2
     console.log(product)
     res.status(200)
     res.json({result:product})
-    })
+    }
 
-router.get('/divide', (req, res) => {
+const divideNumbers = (req, res) => {
     let number1 = parseInt(req.query.num1);
     let number2 = parseInt(req.query.num2);
-    let sum = number1 / number2
+    let fraction = number1 / number2 
     console.log(fraction)
     res.status(200)
     res.json({result:fraction})
-    })
-
 }
 
 module.exports = {
-    addNumbers
-},
-                {
-    substractNumbers
-},
-                {
-    multiplyNumbers
-                },
-{
+    addNumbers, 
+    multiplyNumbers, 
+    subtractNumbers, 
     divideNumbers
-                },
+  }
